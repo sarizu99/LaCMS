@@ -8,7 +8,7 @@ install node modules
 cd public
 npm install
 ```
-Make sure to add below function in your database in order to make the snippet works properly
+Make sure to add the following function in your database in order to make the snippet works properly
 ```
 CREATE FUNCTION `strip_tags`($str text) RETURNS text
 BEGIN
