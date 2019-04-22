@@ -24,10 +24,10 @@
                         @endif
         
                         <div class="form-group">
-                            <input type="text" name="title" class="form-control" placeholder="Post Title">
+                            <input type="text" name="title" class="form-control" placeholder="Post Title" value="{{ old('title') }}">
                         </div>
                         
-                        <textarea name="content" id="editor" name="content"></textarea>
+                        <textarea name="content" id="editor" name="content">{{ old('content') }}</textarea>
 
                         <div class="card mt-4">
                             <div class="card-header">
@@ -40,6 +40,16 @@
                         </div>
                     </main>
                     <aside class="col-md-4">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <div class="card mb-4 publish-card">
                             <div class="card-header">
                                 Publish

@@ -18,6 +18,11 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
+        $v = $request->validate([
+            'name' => 'required|max:190',
+            'slug' => 'required|max:190',
+        ]);
+
         $slug = $request->input('slug');
         $name = $request->input('name');
 
@@ -49,6 +54,11 @@ class CategoryController extends Controller
     
     public function store(Request $request)
     {
+        $v = $request->validate([
+            'name' => 'required|max:190',
+            'slug' => 'required|max:190',
+        ]);
+
         $slug = $request->input('slug');
         $name = $request->input('name');
 

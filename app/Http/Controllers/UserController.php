@@ -19,6 +19,12 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        $v = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'is_admin' => 'required',
+        ]);
+
         \App\User::find($id)->update([
             'name' => $request->input('name'),
             'email' => $request->input('email'),

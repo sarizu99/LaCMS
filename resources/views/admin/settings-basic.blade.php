@@ -21,6 +21,17 @@
             <form action="{{ url()->current() }}" method="post">
                 @csrf
                 @method('put')
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif                
+
                 <table class="table table-borderless">
                     <tbody>
                         <tr>

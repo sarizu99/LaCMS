@@ -19,6 +19,12 @@ class AdminController extends Controller
 
     public function updateAccount(Request $request)
     {
+        $request->validate([
+            'name' => 'required|max:190',
+            'email' => 'required|email',
+            'password' => 'nullable|confirmed',
+        ]);
+
         $old_password = $request->input('old_password');
         $new_password = $request->input('new_password');
         $new_password_c = $request->input('new_password_c');

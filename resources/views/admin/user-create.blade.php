@@ -7,6 +7,16 @@
         <div class="col-md-8 my-4">
             <form action="{{ url()->current() }}" method="post">
                 @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <table class="table table-borderless">
                     <tbody>
                         <tr>
@@ -46,16 +56,6 @@
                         </tr>
                     </tbody>
                 </table>
-
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
 
                 <button class="btn btn-primary float-right" type="submit">Create</button>
             </form>

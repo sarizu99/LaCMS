@@ -29,8 +29,16 @@ class SettingsController extends Controller
 
     public function updateBasic(Request $request)
     {
+        $request->validate([
+            'name'           => 'required|max:190',
+            'snippet_length' => 'required|min:0',
+            'description'    => 'required',
+            'show_at_most'   => 'required',
+            'popular_at_most'=> 'required',
+        ]);
+
         $name           = $request->input('name');
-        $snippet_length   = $request->input('snippet_length');
+        $snippet_length = $request->input('snippet_length');
         $description    = $request->input('description');
         $show_at_most   = $request->input('show_at_most');
         $popular_at_most= $request->input('popular_at_most');

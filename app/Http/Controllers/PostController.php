@@ -50,6 +50,11 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        $v = $request->validate([
+            'title' => 'required|max:190',
+            'content' => 'nullable',
+        ]);
+        
         $user = Auth::user();
         
         $thumbnail = null;
@@ -147,6 +152,11 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
+        $v = $request->validate([
+            'title' => 'required|max:190',
+            'content' => 'nullable',
+        ]);
+
         $thumbnail = null;
 
         if ($request->file('thumbnail')) {

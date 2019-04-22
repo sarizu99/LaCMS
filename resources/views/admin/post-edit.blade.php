@@ -27,13 +27,14 @@
                         <div class="form-group">
                             <input type="text" name="title" class="form-control" value="{{ $post->title }}">
                         </div>
+
                         <div class="form-group permalink">
                             Permalink : {{ url('/') }}/<a href="#" id="permalink">{{ strlen($post->slug) > 30 ? substr($post->slug, 0, 30) . '...' : $post->slug }}</a>
                             <a class="btn btn-sm btn-dark" target="_blank" href="{{ url('/' . $post->slug) }}">Preview</a>
                             <input type="hidden" name="slug" value="{{ $post->slug }}">
                         </div>
                         
-                        <textarea name="content" id="editor" name="content">{{ $post->content }}</textarea>
+                        <textarea name="content" id="editor" name="content">{{ old('content') ?: $post->content }}</textarea>
 
                         <div class="card mt-4">
                             <div class="card-header">
@@ -46,6 +47,16 @@
                         </div>
                     </main>
                     <aside class="col-md-4">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <div class="card mb-4 publish-card">
                             <div class="card-header">
                                 Publish

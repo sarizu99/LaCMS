@@ -20,6 +20,16 @@
                 </script>
             @endif
 
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <a class="btn btn-primary mb-3" href="{{ url('/admin/users/create') }}"><i class="fas fa-plus mr-2"></i> New User</a>
             
             <table class="table table-bordered table-striped">
