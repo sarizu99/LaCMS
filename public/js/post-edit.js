@@ -14,7 +14,9 @@ var makeEditable = () => {
         success: function(response, newValue) {
             $('#permalink').editable('destroy');
             $('#permalink').html(response);
-            $('[name=slug]').val(response);
+            if (response.length) {
+                $('[name=slug]').val(response);
+            }
             makeEditable();
         }
     }).on('save', function(e, params) {

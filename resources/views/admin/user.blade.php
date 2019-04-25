@@ -32,7 +32,7 @@
 
             <a class="btn btn-primary mb-3" href="{{ url('/admin/users/create') }}"><i class="fas fa-plus mr-2"></i> New User</a>
             
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped mb-5">
                 <thead>
                     <tr>
                         <th>Name</th>

@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 mb-5">
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
