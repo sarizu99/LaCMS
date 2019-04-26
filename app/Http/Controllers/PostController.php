@@ -50,6 +50,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+
         $v = $request->validate([
             'title' => 'required|max:190',
             'content' => 'nullable',
@@ -95,6 +96,7 @@ class PostController extends Controller
             if (!empty($nc) && !\App\Category::where('name', $nc)->exists()) {
                 $newly_added_category = \App\Category::create([
                     'name' => $nc,
+                    'slug' => Str::slug($nc),
                 ]);
 
                 \App\PostsCategory::create([
