@@ -23,8 +23,6 @@ class PostController extends Controller
                 ->paginate(\App\SiteSetting::first()->show_at_most),
         ];
 
-        dd($data);
-
         return view('home', $data);
     }
     
