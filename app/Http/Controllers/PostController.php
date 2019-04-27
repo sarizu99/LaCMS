@@ -23,6 +23,8 @@ class PostController extends Controller
                 ->paginate(\App\SiteSetting::first()->show_at_most),
         ];
 
+        dd($data);
+
         return view('home', $data);
     }
     
@@ -136,7 +138,10 @@ class PostController extends Controller
             'post' => $post->first(),
         ];
         
-        $post->update(['views' => $post->first()->views + 1]);
+        $post->update([
+            'views' => $post->first()->views + 1,
+            'updated_at' => $post->first()->updated_at
+        ]);
 
         return view('post', $data);
     }
