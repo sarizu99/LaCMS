@@ -32,13 +32,13 @@ END;
 ```
 
 # Useful Tips
-## Can't add the above SQL function
+## Can't add the above SQL function?
 Add below script before the function
 ```
 DELIMITER //
 ```
 
-## Can't upload thumbnail
+## Can't upload thumbnail?
 If you can't upload image thumbnail, it's because the limitation of maximum upload file size in php setting. You can address it by modifying php.ini file and set the new setting for that. Example
 ```
 upload_max_filesize=20M ; You can change the 20M to the desired max. file size
