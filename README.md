@@ -48,5 +48,5 @@ upload_max_filesize=20M ; You can change the 20M to the desired max. file size
 If you've found a bug in this project please email me at sarizu99@gmail.com.
 
 # Credits
-- Chaerul Hadad
-- Bayu Laksono Wahyu Arminsyah
+- Chaerul Hadad (Frontend design)
+- Bayu Laksono Wahyu Arminsyah (Frontend design)
