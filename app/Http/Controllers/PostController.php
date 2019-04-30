@@ -164,8 +164,12 @@ class PostController extends Controller
 
         $thumbnail = null;
 
+        $old_post = \App\Post::find($id);
+
         if ($request->file('thumbnail')) {
             $thumbnail = $request->file('thumbnail')->store('public/thumbnails');
+        } else if (isset($old_post->thumbnail)) {
+            $thumbnail = $old_post->thumbnail;
         }
 
         $categoriesInput = $request->input('categories') ?: [];
