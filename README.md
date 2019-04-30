@@ -1,9 +1,17 @@
+# What is LaCMS?
+LaCMS is a Content Management System which is built with laravel framework. LaCMS made by Samsul Arif Zulvian for the purpose of coursework in Singaperbangsa University.
+
 # LaCMS Setup Guide
-install vendors packages
+Clone this repository
 ```
+git clone https://github.com/sarizu99/LaCMS.git
+```
+Install vendor packages
+```
+cd LaCMS
 composer install
 ```
-install node modules
+Install node modules
 ```
 cd public
 npm install
@@ -22,7 +30,9 @@ BEGIN
     END LOOP;
 END;
 ```
+# Bug Report
+If you've found a bug in this project please email me at sarizu99@gmail.com.
+
 # Credits
-- Samsul Arif Zulvian
 - Chaerul Hadad
 - Bayu Laksono Wahyu Arminsyah

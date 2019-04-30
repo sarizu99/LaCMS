@@ -94,7 +94,6 @@
                                     <img src="#" alt="post thumbnail" class="mw-100 mt-2 mb-3">
                                 </div>
                                 <div class="custom-file">
-                                    <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
                                     <input type="file" class="custom-file-input" id="customFile" name="thumbnail" accept="image/*">
                                     <label id="thumbnailLabel" class="custom-file-label" for="customFile">
                                         Choose file
