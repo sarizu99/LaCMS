@@ -4,7 +4,7 @@ LaCMS is a Content Management System which is built with laravel framework. LaCM
 # LaCMS Setup Guide
 Clone this repository
 ```
-git clone https://github.com/sarizu99/LaCMS.git
+git clone https://github.com/sarizu99/LaCMS.git LaCMS
 ```
 Install vendor packages
 ```
