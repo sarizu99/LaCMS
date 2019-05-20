@@ -11,6 +11,10 @@ Install vendor packages
 cd LaCMS
 composer install
 ```
+Activate the file upload
+```
+php artisan storage:link
+```
 Install node modules
 ```
 cd public
