@@ -11,7 +11,7 @@ Install vendor packages
 cd LaCMS
 composer install
 ```
-Activate the file upload
+Link the uploaded file
 ```
 php artisan storage:link
 ```
